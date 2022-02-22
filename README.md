@@ -65,6 +65,6 @@ end;
 
 
 3. We've to change the Oracle database name, username and password in the OracleConnect.java file accordingly.
-4. All the Query was written on DataQuery.java file
+4. All the Queries were written on DataQuery.java file.
 4. Finally we've to run the FoodPandaMain.java file.
 5. youtube demo link : https://www.youtube.com/watch?v=0P56Er-ye5c&t=1s

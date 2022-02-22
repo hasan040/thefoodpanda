@@ -35,6 +35,34 @@ CREATE TABLE foodorder
 	PRIMARY KEY (orderid)
 );
 
+CREATE SEQUENCE foodorder_SEQ;
+
+-- creating trigger using the sequence
+CREATE OR REPLACE TRIGGER foodorder_TRG 
+BEFORE INSERT ON foodorder 
+FOR EACH ROW
+WHEN (new.orderid IS NULL)
+BEGIN
+  SELECT foodorder_SEQ.NEXTVAL
+  INTO   :new.orderid
+  FROM   dual;
+END;
+/
+-- creating function to calculate bill
+
+CREATE OR REPLACE FUNCTION func_get_bill (itemid in NUMBER, item_count in NUMBER) return NUMBER IS
+    item_price NUMBER(10,2);
+		total_amount NUMBER(10,2);
+		
+		
+BEGIN
+    SELECT PRICE INTO item_price FROM PRODUCTS
+		WHERE itemid = ID;
+		total_amount := item_price * item_count;
+		return total_amount;
+
+end;
+
 
 3. We've to change the Oracle database name, username and password in the OracleConnect.java file accordingly.
 

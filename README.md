@@ -4,7 +4,7 @@
 - The source directory was named as 'thefoodpanda'.
   It's run on intellij idea 2018.3.4 with jdk 11.0.1 
   & ojdbc8-21.1.0.0 driver.
-- we've to run the queries which were written on required_queries
+- we've to run the queries which were written on [required_queries](https://github.com/hasan040/thefoodpanda/blob/main/required_queries.txt) file.
   
 
 
